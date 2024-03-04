@@ -3,9 +3,8 @@ import React, {useState} from 'react';
 import CustomButton from './CustomButton';
 import Modal from 'react-native-modal';
 import {useUserContext} from '../Context/UserContext';
-
 const UserCard = ({id, name, username, email, phone, company}) => {
-  const {EditUser} = useUserContext();
+  const {EditUser, deleteUser} = useUserContext();
   const [userInfo, setUserInfo] = useState({
     id,
     name,
@@ -45,6 +44,7 @@ const UserCard = ({id, name, username, email, phone, company}) => {
               fillColor="#eb7575"
               border={null}
               id={id}
+              onPress={() => deleteUser(id)}
             />
           </View>
         </View>

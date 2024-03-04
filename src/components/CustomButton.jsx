@@ -3,10 +3,9 @@ import React from 'react';
 import {useUserContext} from '../Context/UserContext';
 
 const CustomButton = ({id, title, fillColor, border, onPress}) => {
-  const {deleteUser} = useUserContext();
   return (
     <TouchableOpacity
-      onPress={title === 'Delete' ? () => deleteUser(id) : onPress}
+      onPress={onPress}
       style={{
         ...styles.button,
         backgroundColor: fillColor ? fillColor : '',

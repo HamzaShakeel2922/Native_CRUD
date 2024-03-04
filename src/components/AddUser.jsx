@@ -1,10 +1,13 @@
 import {View, Text, TextInput, StyleSheet, Button} from 'react-native';
 import Modal from 'react-native-modal';
 import React, {useState} from 'react';
+import {useUserContext} from '../Context/UserContext';
+import uuid from 'react-native-uuid';
+const AddUser = ({isModalVisible, setShowModal}) => {
+  const {addUser} = useUserContext();
 
-const AddUser = ({addUser, isModalVisible, setShowModal}) => {
   const [userInfo, setUserInfo] = useState({
-    id: '',
+    id: uuid.v4(),
     name: '',
     username: '',
     company: {
@@ -19,14 +22,7 @@ const AddUser = ({addUser, isModalVisible, setShowModal}) => {
       isVisible={isModalVisible}
       onRequestClose={() => setShowModal(false)}
       onBackdropPress={() => setShowModal(false)}>
-      <View
-        style={{
-          backgroundColor: '#acacac',
-          padding: 30,
-          justifyContent: 'center',
-          borderRadius: 30,
-          gap: 20,
-        }}>
+      <View style={styles.ModalStyles}>
         <Text style={{textAlign: 'center', fontSize: 25}}>ADD USER</Text>
         <View
           style={{
@@ -107,6 +103,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     color: 'black',
     paddingHorizontal: 10,
+  },
+  ModalStyles: {
+    backgroundColor: '#d9d9d9',
+    padding: 30,
+    justifyContent: 'center',
+    borderRadius: 30,
+    gap: 20,
   },
 });
 export default AddUser;

@@ -1,23 +1,24 @@
-import {Text, TouchableOpacity} from 'react-native';
-
+import {Text, TouchableOpacity, StyleSheet} from 'react-native';
 const AddButton = ({setShowModal}) => {
   return (
     <TouchableOpacity
       onPress={() => setShowModal(true)}
-      style={{
-        padding: 20,
-        backgroundColor: 'grey',
-        alignSelf: 'center',
-        borderRadius: 15,
-      }}>
-      <Text
-        style={{
-          fontSize: 25,
-        }}>
-        ADD USER
-      </Text>
+      style={styles.buttonStyles}>
+      <Text style={styles.titleStyles}>ADD USER</Text>
     </TouchableOpacity>
   );
 };
 
+const styles = StyleSheet.create({
+  buttonStyles: {
+    padding: 20,
+    alignSelf: 'center',
+    borderRadius: 15,
+    borderColor: 'blue',
+    borderWidth: 1,
+  },
+  titleStyles: {
+    fontSize: 25,
+  },
+});
 export default AddButton;

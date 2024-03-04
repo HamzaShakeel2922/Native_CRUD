@@ -42,7 +42,14 @@ export const UserContextProvider = ({children}) => {
   };
 
   const addUser = newUser => {
-    if (newUser.name === '') return;
+    if (
+      newUser.name === '' ||
+      newUser.username === '' ||
+      newUser.company.name === '' ||
+      newUser.email === '' ||
+      newUser.phone === ''
+    )
+      return; // ideally i should have used formik for proper validations.
     const NewData = state.data;
     NewData.push(newUser);
     dispatch({type: 'addUser', payload: NewData});
