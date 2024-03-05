@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "hamza",
+      "company": {
+        "name": "viral square"
+      },
+      "phone": "123456789",
+      "username": "hawk"
+    },
+    {
+      "id": 2,
+      "name": "ali",
+      "company": {
+        "name": "tech solutions"
+      },
+      "phone": "987654321",
+      "username": "techguru"
+    },
+    {
+      "id": 3,
+      "name": "usman",
+      "company": {
+        "name": "digital innovations"
+      },
+      "phone": "555123456",
+      "username": "coder123"
+    },
+    {
+      "id": 4,
+      "name": "sara",
+      "company": {
+        "name": "creative minds"
+      },
+      "phone": "789012345",
+      "username": "artlover"
+    }
+  ]
+}
